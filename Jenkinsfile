@@ -5,6 +5,12 @@ pipeline {
     IMAGE_NAME = "springboot-app"
   }
 
+
+  tools {
+      maven 'M3' // This name must match the name in Global Tool Configuration
+  }
+
+
   stages {
 
     stage('Checkout') {
