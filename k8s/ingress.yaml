@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: springboot-ingress
 spec:
+  ingressClassName: nginx
   rules:
     - host: springboot.local
       http:
