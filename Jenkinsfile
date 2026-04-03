@@ -32,9 +32,9 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        sh 'kubectl apply -f k8s/'
-        sh 'kubectl rollout restart deployment/springboot-app'
-        sh 'kubectl rollout status deployment/springboot-app --timeout=120s'
+        sh 'kubectl apply -f k8s/ -n dev'
+        sh 'kubectl rollout restart deployment/springboot-app -n dev'
+        sh 'kubectl rollout status deployment/springboot-app -n dev --timeout=120s'
       }
     }
 
